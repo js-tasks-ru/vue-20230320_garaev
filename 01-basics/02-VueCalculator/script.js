@@ -10,8 +10,8 @@ const App = {
       arithmetic: 'sum',
     };
   },
-  methods: {
-    results() {
+  computed: {
+    handler() {
       const calculate = (a, b) => {
         if (this.arithmetic === 'sum') {
           return this.a + this.b;

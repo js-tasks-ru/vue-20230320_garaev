@@ -35,46 +35,10 @@
         </div>
 
         <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
-          <label
-            ><input
-              type="radio"
-              name="operator"
-              value="sum"
-              :checked="arithmetic === 'sum'"
-              @change="arithmetic = $event.target.value"
-            />
-            ➕</label
-          >
-          <label
-            ><input
-              type="radio"
-              name="operator"
-              value="subtract"
-              :checked="arithmetic === 'subtract'"
-              @change="arithmetic = $event.target.value"
-            />
-            ➖</label
-          >
-          <label
-            ><input
-              type="radio"
-              name="operator"
-              value="multiply"
-              :checked="arithmetic === 'multiply'"
-              @change="arithmetic = $event.target.value"
-            />
-            ✖</label
-          >
-          <label
-            ><input
-              type="radio"
-              name="operator"
-              value="divide"
-              :checked="arithmetic === 'divide'"
-              @change="arithmetic = $event.target.value"
-            />
-            ➗</label
-          >
+          <label><input type="radio" name="operator" value="sum" v-model="arithmetic" /> ➕</label>
+          <label><input type="radio" name="operator" value="subtract" v-model="arithmetic" /> ➖</label>
+          <label><input type="radio" name="operator" value="multiply" v-model="arithmetic" /> ✖</label>
+          <label><input type="radio" name="operator" value="divide" v-model="arithmetic" /> ➗</label>
         </div>
 
         <div class="col">
@@ -83,7 +47,7 @@
 
         <div class="col">=</div>
 
-        <output class="col" :value="results()">{{result}}</output>
+        <output class="col">{{result}}</output>
       </div>
     </div>
 

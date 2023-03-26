@@ -32,17 +32,16 @@ const emails = [
 const App = {
   data() {
     return {
-      emails,
-      filter: {
-        search: '',
-        isMarked: 'marked',
-      },
+      emails: emails,
+      search: '',
     };
   },
   computed: {
     filterEmails() {
-      const searchFilter = (email) => [email].join(' ').toLowerCase().includes(this.filter.search.toLowerCase());
-      return this.emails.filter((email) => searchFilter(email));
+      return this.emails.map((email) => {
+        const isFilters = this.search !== '' && email.toLowerCase().includes(this.search.toLowerCase());
+        return { value: email, isFilters: isFilters };
+      });
     },
   },
 };
