@@ -6,27 +6,23 @@ const App = {
     return {
       a: 0,
       b: 0,
-      result: 0,
       arithmetic: 'sum',
     };
   },
   computed: {
-    handler() {
-      const calculate = (a, b) => {
-        if (this.arithmetic === 'sum') {
-          return this.a + this.b;
-        }
-        if (this.arithmetic === 'subtract') {
-          return this.a - this.b;
-        }
-        if (this.arithmetic === 'multiply') {
-          return this.a * this.b;
-        }
-        if (this.arithmetic === 'divide') {
-          return this.a / this.b;
-        }
-      };
-      return (this.result = calculate(this.a, this.b));
+    result() {
+      if (this.arithmetic === 'sum') {
+        return this.a + this.b;
+      }
+      if (this.arithmetic === 'subtract') {
+        return this.a - this.b;
+      }
+      if (this.arithmetic === 'multiply') {
+        return this.a * this.b;
+      }
+      if (this.arithmetic === 'divide') {
+        return this.a / this.b;
+      }
     },
   },
 };
