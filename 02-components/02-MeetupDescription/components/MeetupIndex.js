@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import meetups from '../../api/meetups.js';
+import meetups from '../api/meetups.js';
 import MeetupDescription from './MeetupDescription.js';
 
 /**

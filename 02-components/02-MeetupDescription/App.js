@@ -1,5 +1,5 @@
 import { defineComponent } from './vendor/vue.esm-browser.js';
-import MeetupIndex from './components/Meetup/MeetupIndex.js';
+import MeetupIndex from './components/MeetupIndex.js';
 
 export default defineComponent({
   name: 'App',
