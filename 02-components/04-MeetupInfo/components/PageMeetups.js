@@ -3,7 +3,7 @@ import MeetupInfo from './MeetupInfo.js';
 import meetups from '../api/meetups.js';
 
 export default defineComponent({
-  name: 'MeetupIndex',
+  name: 'PageMeetups',
 
   components: {
     MeetupInfo,

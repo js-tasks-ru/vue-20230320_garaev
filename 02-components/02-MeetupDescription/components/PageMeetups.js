@@ -6,7 +6,7 @@ import MeetupDescription from './MeetupDescription.js';
  * @description index страница Meetup
  */
 export default defineComponent({
-  name: 'MeetupIndex',
+  name: 'PageMeetups',
 
   components: {
     MeetupDescription,

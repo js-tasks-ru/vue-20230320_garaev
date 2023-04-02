@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 import MeetupCover from './MeetupCover.js';
 
 export default defineComponent({
-  name: 'MeetupIndex',
+  name: 'PageMeetups',
 
   components: {
     MeetupCover,
