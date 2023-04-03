@@ -1,4 +1,4 @@
-import { defineComponent } from '../vendor/vue.esm-browser.js';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'MeetupCover',
