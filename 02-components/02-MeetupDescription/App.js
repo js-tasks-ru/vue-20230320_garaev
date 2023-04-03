@@ -7,5 +7,5 @@ export default defineComponent({
   components: {
     PageMeetups,
   },
-  template: `<MeetupIndex />`,
+  template: `<PageMeetups />`,
 });
