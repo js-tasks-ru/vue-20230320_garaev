@@ -1,15 +1,17 @@
 <template>
-  <div class="form-group">
-    <!-- form-group_inline -->
-    <label class="form-group__label">label text</label>
-    <!-- CONTENT -->
+  <div class="form-group" :class="{ 'form-group_inline': inline }">
+    <label v-if="label" class="form-group__label">{{ label }}</label>
+    <slot />
   </div>
 </template>
 
-<script>
-export default {
-  name: 'UiFormGroup',
-};
+<script setup lang="ts">
+interface FormGroup {
+  label?: string;
+  inline: false;
+}
+
+const props = defineProps<FormGroup>();
 </script>
 
 <style scoped>
