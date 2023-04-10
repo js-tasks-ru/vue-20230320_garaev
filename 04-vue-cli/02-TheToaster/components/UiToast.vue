@@ -5,28 +5,23 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import UiIcon from './UiIcon.vue';
-/**@todo переписать под composition API lang TS */
+import { onMounted } from 'vue';
 
-export default {
-  name: 'UiToast',
-  components: { UiIcon },
-  props: {
-    toast: {
-      type: Object,
-    },
-  },
-  emits: ['close'],
-  mounted() {
-    setTimeout(this.destroy, 5000);
-  },
-  methods: {
-    destroy() {
-      this.$emit('close', '');
-    },
-  },
-};
+const props = defineProps<{
+  toast: {
+    message: string;
+    statusClass: string;
+    icon: string;
+  };
+}>();
+
+const emit = defineEmits(['close']);
+
+onMounted(() => {
+  setTimeout(() => emit('close'), 5000);
+});
 </script>
 
 <style>
