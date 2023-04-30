@@ -1,5 +1,5 @@
 <template>
-  <slot :name="items.name" v-bind="items.data"/>
+  <slot :name="items.name" v-bind="items.data" />
 </template>
 
 <script>
