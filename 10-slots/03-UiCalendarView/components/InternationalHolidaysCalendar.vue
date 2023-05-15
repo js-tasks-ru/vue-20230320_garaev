@@ -1,6 +1,10 @@
 <template>
-  <UiCalendarView>
-    <div v-for="holiday in internationalHolidaysMap[0][7]" :key="holiday" class="holiday">
+  <UiCalendarView v-slot="{ day }">
+    <div
+      v-for="holiday in internationalHolidaysMap[new Date(day.dateToString).getMonth()][day.currentDate]"
+      :key="holiday.id"
+      class="holiday"
+    >
       {{ holiday }}
     </div>
   </UiCalendarView>
@@ -61,9 +65,6 @@ export default {
   },
 
   computed: {
-    // Для удобства можно создать вычисляемое свойство, которое приводит массив с данными к удобному виду
-    // Например, здесь создаётся массив 12 объектов (по одному на каждый месяц от 0 до 11)
-    // В каждом объекте поле - это день, а значение - массив праздников в этот день
     internationalHolidaysMap() {
       const result = Array.from(Array(12), () => ({}));
       for (const { date, month, holiday } of this.internationalHolidays) {
